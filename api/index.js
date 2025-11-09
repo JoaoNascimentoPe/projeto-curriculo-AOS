@@ -31,10 +31,10 @@ async function initializeDatabase() {
     await db.sequelize.authenticate();
     console.log("Banco de dados conectado com sucesso (via Sequelize).");
 
-    await db.sequelize.sync({ force: true });
+    // await db.sequelize.sync({ force: true });
     console.log("Tabelas sincronizadas (force: true).");
 
-    await seedDatabase();
+    // await seedDatabase();
     console.log("Banco populado com dados iniciais.");
   } catch (error) {
     console.error("Erro ao inicializar o banco:", error);
