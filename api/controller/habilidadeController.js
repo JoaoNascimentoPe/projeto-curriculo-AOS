@@ -48,9 +48,9 @@ const habilidadeController = {
   disassociateFromPessoa: async (req, res) => {
     try {
       const { pessoa_id } = req.params;
-      const { habilidade_id } = req.body;
-      await habilidadeService.associateHabilidade(pessoa_id, habilidade_id);
-      res.status(201).json({ message: "Habilidade associada" });
+      const { habilidade_id } = req.params;
+      await habilidadeService.disassociateHabilidade(pessoa_id, habilidade_id);
+      res.status(201).json({ message: "Habilidade desassociada!" });
     } catch (err) {
       console.error(err.message);
       if (err.message.includes("não encontrada")) {
